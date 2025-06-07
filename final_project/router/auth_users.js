@@ -4,6 +4,8 @@ let books = require("./booksdb.js");
 const regd_users = express.Router();
 
 let users = [];
+module.exports.users = users;
+
 
 // ✅ Util: Check if username is available (used during registration)
 const isValid = (username) => {
