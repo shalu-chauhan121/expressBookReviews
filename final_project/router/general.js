@@ -1,7 +1,16 @@
 const express = require('express');
 let books = require("./booksdb.js");
-let isValid = require("./auth_users.js").isValid;
-let users = require("./auth_users.js").users;
+// let isValid = require("./auth_users.js").isValid;
+const isValid = (username) => {
+  // check if username already exists
+  let userwithsamename = users.filter((user) => user.username === username);
+  return userwithsamename.length === 0;
+};
+
+
+// let users = require("./auth_users.js").users;
+
+let users = []; 
 const public_users = express.Router();
 
 
